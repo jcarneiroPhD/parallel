@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>PEDWM</h1>
+<h2>Use JavaScript to Change Text</h2>
+<p>This example writes "Hello JavaScript!" into an HTML element with id="demo":</p>
+
+<input type = "button" onclick = "initParallelBehaviour()" value = "Display">  
+
+<script>
+function initParallelBehaviour() {
+    if (window.Worker) {
+        var worker = new Worker("fjs.js");
+
+        worker.postMessage("PEDWM");
+
+        worker.onmessage = function(e) {
+            console.log(e.data);
+        }
+    }
+}
+</script> 
+
+</body>
+</html>
